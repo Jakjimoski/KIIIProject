@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # API базен URL
-API_URL = "http://localhost:8000/api"
+API_URL = "http://backend:8000/api"
 
 # CSS стилови
 st.markdown("""
