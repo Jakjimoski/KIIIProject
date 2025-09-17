@@ -8,7 +8,7 @@ done
 
 # Изврши ги миграциите
 echo "Applying database migrations..."
-python manage.py migrate
+python manage.py migrate --noinput
 
 # Стартувај го главниот процес
 echo "Starting server..."
