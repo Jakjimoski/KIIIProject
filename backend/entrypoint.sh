@@ -2,7 +2,7 @@
 
 # Чекај додека базата не е подготвена
 echo "Waiting for database to be ready..."
-while ! nc -z db 5432; do
+while ! nc -z "$POSTGRES_HOST" "$POSTGRES_PORT"; do
   sleep 1
 done
 
