@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamlit-frontend
+  namespace: library-namespace
+  labels:
+    app: streamlit-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streamlit-frontend
+  template:
+    metadata:
+      labels:
+        app: streamlit-frontend
+    spec:
+      containers:
+        - name: streamlit-app
+          image: ivica650/library-frontend:latest
+          ports:
+            - containerPort: 8501
+          env:
+            - name: API_URL
+              value: "http://django-service:8000/api"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: streamlit-service
+  namespace: library-namespace
+spec:
+  selector:
+    app: streamlit-frontend
+  ports:
+    - port: 8501
+      targetPort: 8501
