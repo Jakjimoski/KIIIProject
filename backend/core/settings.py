@@ -24,7 +24,7 @@ SECRET_KEY = "django-insecure-3j-x&_!$q%j*1@9pcmj1@o0r0kyzmx$kuyx*&8bgr4_q5+j)&3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["backend", "localhost", "127.0.0.1", "django-service"]
+ALLOWED_HOSTS = ["backend", "frontend", "localhost", "127.0.0.1", "django-service", "streamlit-service"]
 
 
 # Application definition
@@ -139,3 +139,16 @@ REST_FRAMEWORK = {
 # CORS settings - ДОДАДЕНО
 CORS_ALLOW_ALL_ORIGINS = True  # Овозволува пристап од сите домени за развој
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8501",
+    "http://127.0.0.1:8501", 
+    "http://streamlit-service:8501",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "http://django-service:8000",
+    "http://localhost:8501",
+    "http://127.0.0.1:8501",
+    "http://streamlit-service:8501",
+]
