@@ -12,6 +12,7 @@ st.set_page_config(
 
 # API базен URL
 API_URL = "http://django-service:8000/api"
+response = requests.get(API_URL, headers={"Host": "django-service"})
 
 # CSS стилови
 st.markdown("""
