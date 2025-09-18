@@ -36,15 +36,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Ново додадени апликации:
-    'rest_framework',           # Django REST Framework
-    'corsheaders',              # Django CORS Headers
-    'books',                    # Нашата апликација
+    'rest_framework',           
+    'corsheaders',              
+    'books',                    
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    'corsheaders.middleware.CorsMiddleware',  # Додадено - мора да биде на почеток
+    'corsheaders.middleware.CorsMiddleware', 
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -129,15 +128,15 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Django REST Framework settings - ДОДАДЕНО
+# Django REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'  # Овозволува пристап без автентикација за развој
+        'rest_framework.permissions.AllowAny'  
     ]
 }
 
-# CORS settings - ДОДАДЕНО
-CORS_ALLOW_ALL_ORIGINS = True  # Овозволува пристап од сите домени за развој
+# CORS settings 
+CORS_ALLOW_ALL_ORIGINS = True  
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8501",

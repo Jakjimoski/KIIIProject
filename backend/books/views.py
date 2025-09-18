@@ -12,7 +12,7 @@ class AuthorViewSet(viewsets.ModelViewSet):
     """
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
-    permission_classes = []  # Секој може да чита, само најавени да пишуваат
+    permission_classes = [] 
 
 class GenreViewSet(viewsets.ModelViewSet):
     """

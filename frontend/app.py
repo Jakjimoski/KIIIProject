@@ -1,19 +1,17 @@
-# frontend/app.py
 import streamlit as st
 import requests
 import pandas as pd
 
-# Поставување на наслов и иконка на страницата
 st.set_page_config(
-    page_title="Мојата Библиотека",
+    page_title="Моја библиотека",
     page_icon="📚",
     layout="wide"
 )
 
-# API базен URL
+
 API_URL = "http://django-service:8000/api"
 
-# CSS стилови
+
 st.markdown("""
 <style>
     .main-header {
@@ -39,7 +37,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Функции за API
+
 def get_books():
     try:
         response = requests.get(f"{API_URL}/books/")
@@ -113,10 +111,9 @@ def create_genre(genre_data):
         st.error(f"Грешка при креирање на жанр: {e}")
         return False
 
-# Главен наслов
-st.markdown('<h1 class="main-header">📚 Мојата Библиотека</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header">📚 Моја библиотека</h1>', unsafe_allow_html=True)
 
-# Странична лента
+
 with st.sidebar:
     st.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
     st.header("➕ Додади нов автор")
@@ -185,7 +182,7 @@ with st.sidebar:
                     st.success("Книгата е успешно додадена!")
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Главен дел - Приказ и менаџирање на книгите
+
 st.header("📖 Сите книги")
 books = get_books()
 
@@ -217,7 +214,7 @@ else:
                 if st.button("✏️ Уреди", key=f"edit_{book['id']}_{i}"):
                     st.session_state.editing_book = book['id']
     
-    # Форма за уредување (се појавува кога се клика на Уреди)
+    
     if 'editing_book' in st.session_state:
         editing_book_id = st.session_state.editing_book
         editing_book = next((book for book in books if book['id'] == editing_book_id), None)
@@ -267,7 +264,7 @@ else:
                             del st.session_state.editing_book
                             st.rerun()
 
-    # Статистика
+  
     st.subheader("📊 Статистика")
     col1, col2, col3 = st.columns(3)
     
