@@ -4,11 +4,11 @@
 Дополнително, системот пресметува статистики како просечна оцена, број на книги и најново додадена книга.
 
 ## Технологии
--**Backend**: Django
--**Frontend**: Streamlit
--**База на податоци**: PostgreSQL
--**Инфраструктура**: Docker, Kubernetes (k3d)
--**Верзионирање**: GitHub
+- **Backend**: Django
+- **Frontend**: Streamlit
+- **База на податоци**: PostgreSQL
+- **Инфраструктура**: Docker, Kubernetes (k3d)
+- **Верзионирање**: GitHub
 
 ### 1. Креирај кластер со k3d
 ```bash
