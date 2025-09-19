@@ -7,7 +7,7 @@ while ! nc -z "$POSTGRES_HOST" "$POSTGRES_PORT"; do
 done
 
 echo "Making migrations..."
-python manage.py makemigrations
+python manage.py makemigrations books
 
 echo "Applying database migrations..."
 python manage.py migrate --noinput
