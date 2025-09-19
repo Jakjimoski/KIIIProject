@@ -10,8 +10,7 @@ st.set_page_config(
 )
 
 
-API_URL = "http://backend:8000/api"
-
+API_URL = "http://django-service:8000/api"
 
 st.markdown("""
 <style>
