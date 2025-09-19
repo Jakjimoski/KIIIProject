@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
+import os
 
 st.set_page_config(
     page_title="Моја библиотека",
@@ -9,7 +10,7 @@ st.set_page_config(
 )
 
 
-API_URL = "http://django-service:8000/api"
+API_URL = "http://backend:8000/api"
 
 
 st.markdown("""
