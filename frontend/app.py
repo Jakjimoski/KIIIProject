@@ -10,7 +10,11 @@ st.set_page_config(
 )
 
 
-API_URL = "http://django-service:8000/api"
+#API_URL = "http://django-service:8000/api"
+BACKEND_HOST = os.getenv("BACKEND_HOST", "django-service")
+BACKEND_PORT = os.getenv("BACKEND_PORT", "8000")
+
+API_URL = f"http://{BACKEND_HOST}:{BACKEND_PORT}/api"
 
 st.markdown("""
 <style>

@@ -40,7 +40,8 @@ services:
     build: ./frontend
     container_name: library-frontend
     environment:
-      - API_URL="http://backend:8000/api"
+      - BACKEND_HOST=backend
+      - BACKEND_PORT=8000
     depends_on:
       - backend
     ports:
